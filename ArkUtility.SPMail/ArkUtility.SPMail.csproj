@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B6BB023-93DB-4680-8730-EF364A9A62C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArkUtility.SPMail</RootNamespace>
+    <AssemblyName>ArkUtility.SPMail</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TokenReplacementFileExtensions>svc</TokenReplacementFileExtensions>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SharedKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Infrastructure\CustomMultipleBaseAddressServiceHostFactory.cs" />
+    <Compile Include="Infrastructure\EmailMessage.cs" />
+    <Compile Include="Infrastructure\License.cs" />
+    <Compile Include="Infrastructure\HtmlHelper.cs" />
+    <Compile Include="Infrastructure\ImageHelper.cs" />
+    <Compile Include="Infrastructure\SendResponse.cs" />
+    <Compile Include="Infrastructure\UnifiedLogging.cs" />
+    <Compile Include="ISAPI\ArkUtility.SPMail\IMailService.cs" />
+    <Compile Include="ISAPI\ArkUtility.SPMail\MailService.cs" />
+    <Compile Include="Layouts\ArkUtility.SPMail\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ArkUtility.SPMail\index.aspx.designer.cs">
+      <DependentUpon>index.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Elements\ArkUtility.SPMail\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{890a9cad-3e18-48ac-b0e1-14fdf723fd31}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\ArkUtility_SPMail_WebApp\ArkUtility_SPMail_WebApp.feature">
+      <FeatureId>{88955cc4-edea-4812-9334-3a532ec24816}</FeatureId>
+    </None>
+    <None Include="ISAPI\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{25077272-0fc4-4df0-a21e-9e7c1d035ddd}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bc76c31b-89ab-46b7-b719-e6fbe9d9622c}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{f3ee335e-ec69-4ce8-aa1d-27569275b68a}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Setup\EULA.rtf" />
+    <None Include="Setup\Setup2013.exe.config" />
+    <None Include="SharedKey.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="License\copying.lesser.txt" />
+    <Content Include="License\copying.txt" />
+    <Content Include="Elements\ArkUtility.SPMail\Elements.xml" />
+    <Content Include="Features\ArkUtility_SPMail_WebApp\ArkUtility_SPMail_WebApp.Template.xml">
+      <DependentUpon>ArkUtility_SPMail_WebApp.feature</DependentUpon>
+    </Content>
+    <Content Include="ISAPI\ArkUtility.SPMail\Mail.svc" />
+    <Content Include="Layouts\ArkUtility.SPMail\copying.lesser.txt" />
+    <Content Include="Layouts\ArkUtility.SPMail\copying.txt" />
+    <Content Include="Layouts\ArkUtility.SPMail\index.aspx" />
+    <Content Include="License\Notice.txt" />
+    <Content Include="Setup\copying.lesser.txt" />
+    <Content Include="Setup\copying.txt" />
+    <Content Include="Setup\Notice.txt" />
+    <Content Include="Setup\Release Notes.txt" />
+    <Content Include="Setup\Setup2013.exe" />
+    <Content Include="Setup\SetupConfigurationReadme.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

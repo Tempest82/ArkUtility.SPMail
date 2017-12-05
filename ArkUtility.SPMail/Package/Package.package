@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f3ee335e-ec69-4ce8-aa1d-27569275b68a" solutionId="f3ee335e-ec69-4ce8-aa1d-27569275b68a" resetWebServer="false" sharePointProductVersion="15.0" name="ArkUtility.SPMail" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="88955cc4-edea-4812-9334-3a532ec24816" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="25077272-0fc4-4df0-a21e-9e7c1d035ddd" />
+    <projectItemReference itemId="bc76c31b-89ab-46b7-b719-e6fbe9d9622c" />
+  </projectItems>
+</package>

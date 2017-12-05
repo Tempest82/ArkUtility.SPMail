@@ -1,0 +1,7 @@
+﻿<<%@ ServiceHost 
+    Language="C#" 
+    Debug="true" 
+    Service="ArkUtility.SPMail.MailService, $SharePoint.Project.AssemblyFullName$"
+    CodeBehind="MailService.cs"
+    Factory="ArkUtility.SPMail.Infrastructure.CustomMultipleBaseAddressWebServiceHostFactory, $SharePoint.Project.AssemblyFullName$" 
+    %>
